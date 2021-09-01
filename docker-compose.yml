@@ -1,0 +1,22 @@
+version: '3'
+services: 
+  database:
+    container_name: databaseproject
+    build: .
+    image: database
+    environment: 
+      MYSQL_ROOT_USER: myprojectcase
+      MYSQL_ROOT_PASSWORD: myprojectcase
+      MYSQL_DATABASE: sweetsweeties
+    volumes: 
+      - "./productcase/sweetsweeties.sql:/docker-entrypoint-initdb.d/sweetsweeties.sql"
+    ports: 
+      - "3306:3306"
+
+    networks:
+      - "int222"
+
+networks:
+    int222:
+      name: int222_network
+      driver: bridge
