@@ -8,8 +8,6 @@ services:
       MYSQL_ROOT_USER: myprojectcase
       MYSQL_ROOT_PASSWORD: myprojectcase
       MYSQL_DATABASE: sweetsweeties
-    volumes: 
-      - "./productcase/sweetsweeties.sql:/docker-entrypoint-initdb.d/sweetsweeties.sql"
     ports: 
       - "3306:3306"
 
