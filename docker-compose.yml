@@ -10,7 +10,8 @@ services:
       MYSQL_DATABASE: sweetsweeties
     ports: 
       - "3306:3306"
-
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
     networks:
       - "int222"
 
