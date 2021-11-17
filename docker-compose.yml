@@ -12,6 +12,7 @@ services:
       - "3306:3306"
     volumes:
       - ./init:/docker-entrypoint-initdb.d
+    restart: always
     networks:
       - "int222"
 
